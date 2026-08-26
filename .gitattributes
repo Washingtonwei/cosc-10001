@@ -1,0 +1,8 @@
+# Store text as LF in the repo; check out native line endings locally
+# (CRLF on Windows, LF on macOS/Linux). Keeps student pull requests
+# from Macs (Week 12) to one-line diffs.
+* text=auto
+
+# Binary — never diff or line-ending-convert these.
+*.docx binary
+*.pdf  binary

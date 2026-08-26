@@ -1,0 +1,59 @@
+# =====================================================================
+#  THIS REPOSITORY IS PUBLIC.
+#  Everything below stays on your machine and is NOT version-controlled.
+#  Before you add a file to the repo root, decide which side it is on.
+#  Anything committed here is world-readable, permanently, including in
+#  the history students read on the projector in the Git session.
+# =====================================================================
+
+# Private course material — mentor names, pay rates, hiring notes,
+# guest speakers who have not been invited yet.
+instructor/
+STATUS.md
+CLAUDE.md
+
+# Superseded drafts.
+archive/
+
+# The playground site. It is its own public repo, cosc-10001-playground, and
+# lives here only so everything for this course sits in one folder. It must not
+# become part of this repo's history.
+playground/
+
+# Never commit student data.
+roster*.csv
+grades*.csv
+*-roster.*
+*-grades.*
+students.*
+
+# ---------------------------------------------------------------------
+# Build output
+# ---------------------------------------------------------------------
+site/
+.cache/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# ---------------------------------------------------------------------
+# OS, Dropbox, editors, Office lock files
+# ---------------------------------------------------------------------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+._*
+
+.dropbox
+.dropbox.attr
+*.dropbox.attr
+*conflicted copy*
+
+~$*
+*.tmp
+
+.vscode/
+.idea/
+*.swp

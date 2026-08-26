@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 1 Slides · COSC 10001</title>
+<!--
+  Student copy of the Week 1 slides, Wed, Aug 26, 2026.
+
+  This is the version published on the course site. The presenter copy lives in
+  instructor/sessions/WEEK-01-DECK.html and is the one to edit for class: it carries the
+  timing badges and the three sign-up QR codes.
+
+  Deliberately NOT here: QR codes of any kind. The sign-up codes live on the
+  presenter copy, and the Day 1 survey QR lives on the landing page, docs/index.md.
+  The Slack invite is sent by email and appears nowhere public.
+
+  Arrow keys or click to move. F for fullscreen.
+-->
+<style>
+  :root{
+    --bg:#0e1013; --fg:#f4f4f5; --dim:#a1a1aa; --accent:#a06ee1;
+    --accent-soft:#2a1f3d;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html,body{height:100%}
+  body{
+    background:var(--bg); color:var(--fg); overflow:hidden;
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .slide{
+    position:absolute; inset:0; display:none;
+    flex-direction:column; justify-content:center;
+    padding:5vh 7vw; gap:2.2vh;
+  }
+  .slide.on{display:flex}
+
+  h1{font-size:clamp(2.6rem,7.2vw,7rem); line-height:1.02; letter-spacing:-.03em; font-weight:800}
+  h2{font-size:clamp(2rem,5vw,4.6rem); line-height:1.08; letter-spacing:-.02em; font-weight:750}
+  p{font-size:clamp(1.15rem,2.3vw,2.1rem); line-height:1.45; max-width:42ch}
+  p.wide{max-width:56ch}
+  .dim{color:var(--dim)}
+  .accent{color:var(--accent)}
+  strong{color:#fff; font-weight:750}
+
+  ul{list-style:none; display:flex; flex-direction:column; gap:1.6vh; margin-top:1vh}
+  li{
+    font-size:clamp(1.15rem,2.5vw,2.2rem); line-height:1.3;
+    padding-left:1.5em; position:relative; max-width:48ch;
+  }
+  li::before{content:"—"; position:absolute; left:0; color:var(--accent)}
+  ol.numbered{list-style:none; display:flex; flex-direction:column; gap:2vh; margin-top:1vh; counter-reset:n}
+  ol.numbered li{padding-left:2em; counter-increment:n}
+  ol.numbered li::before{content:counter(n); color:var(--accent); font-weight:800}
+
+  .kicker{
+    font-size:clamp(.75rem,1.15vw,1rem); letter-spacing:.22em; text-transform:uppercase;
+    color:var(--accent); font-weight:700;
+  }
+  .quote{
+    font-size:clamp(1.3rem,2.9vw,2.6rem); line-height:1.35; max-width:46ch;
+    border-left:4px solid var(--accent); padding-left:1em; font-weight:500;
+  }
+
+  .map{display:grid; grid-template-columns:repeat(4,1fr); gap:1.1vw; margin-top:1.5vh}
+  .map div{
+    background:var(--accent-soft); border:1px solid #3b2d52; border-radius:.55rem;
+    padding:1.6vh .8vw; text-align:center; font-weight:650;
+    font-size:clamp(.8rem,1.55vw,1.5rem); line-height:1.15;
+  }
+
+  .count{
+    position:fixed; bottom:1.6vh; right:2vw; font-size:clamp(.7rem,1.1vw,1rem);
+    color:#52525b; font-variant-numeric:tabular-nums;
+  }
+  .hint{
+    position:fixed; bottom:1.6vh; left:2vw; font-size:clamp(.7rem,1.1vw,1rem); color:#52525b;
+  }
+  .bar{position:fixed; left:0; bottom:0; height:3px; background:var(--accent); transition:width .18s ease}
+
+  /* ---------- reading mode: every slide stacked in a normal scrolling page ----------
+     Toggled with the button top-left, or the P key. Fullscreen (F) still works in
+     either mode. Nothing below this comment affects presenting. */
+  body.page{height:auto; overflow:auto}
+  body.page .slide{
+    position:static; display:flex; justify-content:flex-start;
+    min-height:auto; padding:6vh 7vw 7vh; border-bottom:1px solid #26262c;
+  }
+  body.page .count, body.page .bar, body.page .hint, body.page .badge{display:none}
+
+  .modebtn{
+    position:fixed; top:1.4vh; left:2vw; z-index:20;
+    background:var(--accent-soft); color:var(--fg);
+    border:1px solid #3b2d52; border-radius:.4rem;
+    padding:.5em 1em; font:inherit; font-size:clamp(.7rem,1.05vw,.95rem);
+    font-weight:650; cursor:pointer; opacity:.5; transition:opacity .15s ease;
+  }
+  .modebtn:hover{opacity:1; border-color:var(--accent)}
+</style>
+</head>
+<body>
+
+<button class="modebtn" id="modebtn">Read as page</button>
+
+<div class="count" id="count"></div>
+<div class="hint">arrow keys · F fullscreen · P read as page</div>
+<div class="bar" id="bar"></div>
+
+<section class="slide">
+  <div class="kicker">COSC 10001 · Fall 2026 · RJH 333</div>
+  <h1>The Computer<br>Science<br>Experience</h1>
+  <p class="dim">Week 1 · Wednesday, August 26, 2026</p>
+</section>
+
+<section class="slide">
+  <div class="kicker">Everybody up</div>
+  <h2>Stay standing if&hellip;</h2>
+  <ul>
+    <li>you have <strong>never</strong> written a line of code</li>
+    <li>you have used ChatGPT or Claude for schoolwork</li>
+    <li>you have used an AI tool to write <strong>code</strong></li>
+    <li>you have ever opened a terminal</li>
+    <li>you have used Git</li>
+    <li>you are the first in your family to study computing</li>
+    <li>you are <strong>not 100% sure</strong> CS is the right major for you</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h1>Look around.</h1>
+  <p class="wide">That is normal. This course exists partly to help you answer it.</p>
+</section>
+
+<section class="slide">
+  <div class="kicker">At your table</div>
+  <h2>Name.<br>Hometown.<br>One thing you want to build someday.</h2>
+  <p class="dim">However unrealistic. Especially if unrealistic.</p>
+</section>
+
+<section class="slide">
+  <h1>CS is not<br>&ldquo;programming.&rdquo;</h1>
+  <p class="wide">Programming is one tool. The field is about what can be computed, how fast, at what cost, and what happens to people when you do.</p>
+</section>
+
+<section class="slide">
+  <div class="kicker">The map</div>
+  <div class="map">
+    <div>AI &amp; Machine Learning</div><div>Security</div><div>Systems</div><div>Networks</div>
+    <div>Databases</div><div>Graphics</div><div>Theory</div><div>Human-Computer Interaction</div>
+    <div>Software Engineering</div><div>Open Source</div><div>Programming Languages</div><div>Robotics</div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>One of these a week.</h2>
+  <p class="wide">Not deeply. Just enough to know which ones you want more of.</p>
+</section>
+
+<section class="slide">
+  <div class="kicker">The honest part</div>
+  <h2>Most of you will change your mind at least once.</h2>
+  <p class="wide">That is the system working, not failing. It is much cheaper to discover you love security in your first semester than in your last.</p>
+</section>
+
+<section class="slide">
+  <div class="kicker">Live demo</div>
+  <h2>Something real, built from nothing, in ninety seconds.</h2>
+  <p class="wide">By Wed, Sep 23 you will be doing this. By December you will have shipped one.</p>
+</section>
+
+<section class="slide">
+  <h1>Why you<br>belong here.</h1>
+</section>
+
+<section class="slide">
+  <p class="quote">The students who arrive already knowing how to code are ahead in week one, and it evens out faster than you would think.<br><br>What actually predicts how this goes for you is <strong>whether you ask for help early</strong>.<br><br>That is it. That is the variable.</p>
+</section>
+
+<section class="slide">
+  <div class="kicker">Your peer mentors</div>
+  <h2>They were sitting where you are, one or two years ago.</h2>
+  <p class="wide">Each of them has a pod. Learn your mentor's name today.</p>
+</section>
+
+<section class="slide">
+  <div class="kicker">The one required action today</div>
+  <h2>Three sign-ups.</h2>
+  <ol class="numbered">
+    <li><strong>GitHub account</strong>, with a username you would put on a r&eacute;sum&eacute;</li>
+    <li><strong>GitHub Student Developer Pack</strong>, applied for before you leave the room</li>
+    <li>The <strong>Day 1 survey</strong>. The class Slack invite comes by email: check your inbox</li>
+  </ol>
+  <p class="dim">The survey QR code is on the course site landing page, and the links are in TCU Online.</p>
+</section>
+
+<section class="slide">
+  <h2>The Student Pack is the only thing today with a deadline that is not mine.</h2>
+  <p class="wide">Verification takes days, sometimes longer, and your agent has to be running by Wed, Sep 23. <strong>Apply before you leave this room.</strong></p>
+</section>
+
+<section class="slide">
+  <div class="kicker">What this semester looks like</div>
+  <ul>
+    <li>Once a week. Missing a class means missing a whole topic. <strong>One free absence.</strong></li>
+    <li>You will <strong>build and publish something real</strong> by December.</li>
+    <li>You are <strong>expected</strong> to use AI tools here.</li>
+    <li>Snacks every week. Tell me about allergies on the survey.</li>
+    <li>Your first deadline lands before October. They are all on the schedule.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <div class="kicker">The catch</div>
+  <h2>You will own everything it gets wrong.</h2>
+  <p class="wide">The biggest chunk of points on your project is for finding and fixing what the agent got wrong. <strong>A project that worked perfectly the first time scores worse than one that broke three times and you can explain why.</strong></p>
+</section>
+
+<section class="slide">
+  <div class="kicker">Before you leave</div>
+  <ul>
+    <li>Student Pack application submitted? <strong>Your mentor is checking.</strong></li>
+    <li>Watch your email: the Slack invite is coming today</li>
+    <li>Next week: bring your laptop, broken or not</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h1>See you<br>Wednesday.</h1>
+  <p class="dim">Before next week, two things: install <strong>IntelliJ IDEA</strong>, and open the <span class="accent">karel-starter</span> zip inside it. Then read Karel reader chapters 1&ndash;2. That is all. If it breaks, come with it broken. That is the assignment.</p>
+</section>
+
+<script>
+  var slides = Array.prototype.slice.call(document.querySelectorAll(".slide"));
+  var count = document.getElementById("count");
+  var bar = document.getElementById("bar");
+  var i = 0;
+
+  function draw(){
+    slides.forEach(function(s, n){ s.classList.toggle("on", n === i); });
+    count.textContent = (i + 1) + " / " + slides.length;
+    bar.style.width = ((i + 1) / slides.length * 100) + "%";
+    try { location.hash = i + 1; } catch (e) {}
+  }
+  function go(n){ i = Math.max(0, Math.min(slides.length - 1, n)); draw(); }
+
+  // Reading mode: the whole deck as one scrolling page. Presenting is unaffected.
+  var modebtn = document.getElementById("modebtn");
+  var pageMode = false;
+  function setMode(on){
+    pageMode = on;
+    document.body.classList.toggle("page", on);
+    modebtn.textContent = on ? "\u25b6 Present" : "Read as page";
+    if (!on) draw();
+  }
+  modebtn.addEventListener("click", function(e){ e.stopPropagation(); setMode(!pageMode); });
+
+  document.addEventListener("keydown", function(e){
+    var k = e.key;
+    if (k === "p" || k === "P") { e.preventDefault(); setMode(!pageMode); return; }
+    if (k === "f" || k === "F") {
+      if (document.fullscreenElement) document.exitFullscreen();
+      else document.documentElement.requestFullscreen();
+      return;
+    }
+    if (pageMode) return;   // let the page scroll like a normal page
+    if (k === "ArrowRight" || k === " " || k === "PageDown" || k === "Enter") { e.preventDefault(); go(i + 1); }
+    else if (k === "ArrowLeft" || k === "PageUp" || k === "Backspace") { e.preventDefault(); go(i - 1); }
+    else if (k === "Home") { go(0); }
+    else if (k === "End") { go(slides.length - 1); }
+  });
+  document.addEventListener("click", function(e){
+    if (pageMode) return;
+    go(i + (e.clientX < window.innerWidth * 0.25 ? -1 : 1));
+  });
+
+  var start = parseInt((location.hash || "").slice(1), 10);
+  go(isNaN(start) ? 0 : start - 1);
+  setMode(true);
+</script>
+</body>
+</html>

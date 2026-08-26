@@ -1,0 +1,114 @@
+site_name: "COSC 10001: The Computer Science Experience"
+site_description: >-
+  A 1-credit first-year seminar at TCU. The whole map of computer science,
+  the tools professionals actually use, and a project you ship yourself.
+site_url: https://washingtonwei.github.io/cosc-10001/
+repo_url: https://github.com/Washingtonwei/cosc-10001
+repo_name: Washingtonwei/cosc-10001
+edit_uri: edit/main/docs/
+copyright: Texas Christian University · Fall 2026
+
+# Nav is hand-maintained on purpose: content files carry no front matter, so they
+# stay clean documents that a first-year can read and edit in the browser.
+nav:
+  - Start Here: index.md
+  - Schedule: schedule.md
+  - Syllabus: syllabus.md
+  - AI Policy: ai-policy.md
+  - What to Read: reading.md
+  - Opportunities: opportunities.md
+  - Ship-It Project: ship-it.md
+  - Setting Up:
+      - Accounts & Tools: tool-setup.md
+      - IntelliJ + Karel: setup-intellij.md
+      - Windows Terminal: setup-windows.md
+      - macOS Terminal: setup-macos.md
+
+theme:
+  name: material
+  language: en
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    # Light mode is the default: the room reads this on a projector at 9 AM.
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple      # TCU purple
+      accent: deep purple
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.instant     # SPA-style page loads
+    - navigation.tracking    # URL follows the active anchor
+    - navigation.top         # back-to-top button
+    - navigation.footer      # prev/next links at the page bottom
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.action.edit    # "edit this page" -> anyone can propose a typo fix
+    - content.code.copy      # one-click copy on every command block
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+
+plugins:
+  - search
+  # External links open in a new tab, so a student who clicks through to the
+  # TCU CTE page or a GitHub doc doesn't lose the syllabus they were reading.
+  # Asset downloading is off: this is here only to rewrite outgoing links, and
+  # leaving it on would make every build depend on fetching third-party files.
+  - privacy:
+      assets: false
+      links_attr_map:
+        target: _blank
+        rel: noopener
+
+# Fail the build on a broken internal link or a page missing from the nav.
+# A bad link fails the build instead of shipping, on any pull request as well as
+# on main. The in-class PR exercise lives in the playground repo, which carries
+# its own copy of this setting for the same reason.
+strict: true
+validation:
+  links:
+    absolute_links: relative_to_docs
+    unrecognized_links: warn
+  nav:
+    omitted_files: warn
+
+# Compact [SLIDES] link styling for the schedule table's per-row links.
+# Needs the attr_list extension above; usage is documented in the file itself.
+extra_css:
+  - assets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Washingtonwei/cosc-10001
+      name: This site's source on GitHub

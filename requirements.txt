@@ -1,0 +1,5 @@
+# Pinned so the site builds identically in CI and on your laptop.
+# To preview locally:  pip install -r requirements.txt  &&  mkdocs serve
+# 9.7.0 or newer is required: the privacy plugin's links_attr_map, which is
+# what makes external links open in a new tab, does not exist before it.
+mkdocs-material==9.7.7

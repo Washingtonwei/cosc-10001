@@ -1,0 +1,68 @@
+name: Deploy site to GitHub Pages
+
+# Builds the MkDocs site and publishes it via the GitHub Pages Actions source.
+# Deliberately NOT `mkdocs gh-deploy`: that pushes compiled HTML to a gh-pages
+# branch and fills the log with bot commits. The Git session reads the real
+# git log in class, so the history stays human.
+
+on:
+  push:
+    branches: [main]
+  # Pull requests get built too, so a broken link shows up as a red X on the PR
+  # itself instead of after it is merged. That covers typo fixes from readers and
+  # your own branches. The in-class PR exercise is not here: it runs against the
+  # playground repo, which needs this same trigger for the same reason.
+  pull_request:
+    branches: [main]
+  # Lets you re-publish from the Actions tab without making a commit.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys race. Queue instead of cancelling so an in-flight
+# publish always finishes. Keyed by ref so concurrent PRs check themselves in
+# parallel instead of queueing behind each other.
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install MkDocs
+        run: pip install -r requirements.txt
+
+      # strict: true in mkdocs.yml turns a broken internal link into a failed
+      # build. On a pull request this is the check that catches it; on main it
+      # is the last gate before publishing.
+      - name: Build site
+        run: mkdocs build --strict
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  # Pull requests build but never publish. Only main reaches the live site.
+  deploy:
+    needs: build
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

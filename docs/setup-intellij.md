@@ -72,7 +72,7 @@ On the welcome screen, click **Open**. Not *New Project*.
 
 **Select the `karel-starter` folder itself**, the one containing `MyKarel.java`. Not the zip, not a file inside it, not the folder above it. Click **OK**, and trust the project if it asks.
 
-You should now see the file list on the left with `MyKarel.java`, `karel.jar`, `worlds/`, and the two run scripts. The title bar should say *karel-starter*.
+You should now see the file list on the left with `MyKarel.java`, a `lib/` folder holding `karel.jar`, `worlds/`, and the two run scripts. The title bar should say *karel-starter*.
 
 **If IntelliJ asks which JDK to use, or shows a yellow banner about one, don't panic and don't guess.** That's step 4, and it's next.
 
@@ -111,17 +111,17 @@ Click **Download**. A progress bar runs for a minute or two. When it finishes, t
 
 Open `MyKarel.java`. **The line `import stanford.karel.*;` will have a red underline, and the word `Karel` will be red too.**
 
-**Nothing is broken.** Your program is fine. IntelliJ simply doesn't know yet that the robot library exists, because `karel.jar` is just a file sitting in the folder as far as it's concerned.
+**Nothing is broken.** Your program is fine. IntelliJ simply doesn't know yet that the robot library exists, because `karel.jar` is just a file sitting in a folder as far as it's concerned.
 
 So tell it:
 
-1. In the file list on the left, **right-click `karel.jar`**.
+1. In the file list on the left, **click the arrow next to `lib` to open it**, then **right-click `karel.jar`** inside.
 2. Choose **Add as Library...**
 3. Leave the options alone and click **OK**.
 
 The red goes away, usually within a second or two.
 
-> **This is worth thirty seconds of your attention, because it's the same idea twice.** In class you'll watch Karel start from the terminal with `javac -cp karel.jar`, where `-cp` is short for "classpath" and means "here's where to find code I didn't write." **Add as Library** is that exact instruction, given with a mouse instead of a keyboard. Two ways to say one thing. Once you see that, a lot of tooling stops being mysterious.
+> **This is worth thirty seconds of your attention, because it's the same idea twice.** In class you'll watch Karel start from the terminal with `javac -cp lib/karel.jar`, where `-cp` is short for "classpath" and means "here's where to find code I didn't write." **Add as Library** is that exact instruction, given with a mouse instead of a keyboard. Two ways to say one thing. Once you see that, a lot of tooling stops being mysterious.
 
 ---
 

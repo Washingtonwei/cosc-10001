@@ -101,10 +101,12 @@ Follow the guide for your machine, on your own time. We do not install anything 
 
 | Your machine | Guide |
 |---|---|
-| **Windows** | [WezTerm + PowerShell 7](setup-windows.md) |
-| **macOS** | [Ghostty + zsh](setup-macos.md) |
+| **Windows** | [Terminal setup on Windows](setup-windows.md) |
+| **macOS** | [Terminal setup on macOS](setup-macos.md) |
 
-Both guides end with a block that prints the version of every tool. If all of them print, you're done. **If any of them error, bring your laptop to class or office hours. Don't quietly stay broken.**
+**The required part of each guide is short**: you already have a terminal, so it's Git, Node.js, and the two AI agents. Everything past that is marked optional, makes things prettier, and is not needed for any assignment here. Skip it in week one and come back when you're curious.
+
+Both guides end with a block that prints the version of every tool. Five lines, five versions, and you're done. **If any of them error, bring your laptop to class or office hours. Don't quietly stay broken.**
 
 > **Optional, not graded:** MIT's [The Missing Semester](https://missing.csail.mit.edu/) is a short free course on the shell, Git, and debugging: the things every CS program assumes you know and never teaches. The first three lectures cover our first two sessions in more depth, at your own pace.
 

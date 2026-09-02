@@ -44,7 +44,13 @@ Apply at <https://education.github.com/pack>. You'll need:
 - Proof of enrollment: a dated class schedule from my.tcu.edu works well
 - A real name and profile photo on the account, since sparse accounts get rejected more often
 
-**If you get rejected**, it's usually the enrollment proof. Reapply with a clearer, dated document. Email me if you're rejected twice; I can verify your enrollment directly.
+**If you get rejected**, it is almost always one of these three, and all three are on your end:
+
+- The **Name** field on your GitHub profile isn't your full legal name exactly as it appears on the document you uploaded. A nickname fails.
+- Your **billing address** in GitHub settings is empty. Fill it in with your real address.
+- The document doesn't **clearly show a date** in the current academic year. A class schedule printed from my.tcu.edu with the term visible works; a student ID card with no date usually doesn't.
+
+Fix those and reapply. **I cannot verify you manually.** GitHub does not do manual reviews at an instructor's request, so there is no back channel for me to push you through, and I'd rather tell you that than have you wait on me. What I can do is look at the rejection with you and write you a dated enrollment letter if your class schedule isn't doing the job. Bring the rejection email to office hours.
 
 Besides Copilot, the Pack unlocks JetBrains IDEs, cloud credits, free domain names, and a couple dozen other tools. Worth browsing once it lands.
 
@@ -158,7 +164,7 @@ There's also an honest reason: institutional access to the premium tools costs r
 
 ## Troubleshooting
 
-**Student Pack rejected twice** → email me, I can verify enrollment directly.
+**Student Pack rejected twice** → check the three things in [section 2](#2-github-student-developer-pack), then bring the rejection email to office hours. I can write you a dated enrollment letter; I can't verify your account for you, and nobody at TCU can.
 
 **Pack approved but Copilot still shows Free** → sign out of GitHub completely and back in. It can take up to 24 hours to propagate; after that, check <https://github.com/settings/copilot>.
 

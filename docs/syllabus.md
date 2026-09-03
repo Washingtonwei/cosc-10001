@@ -40,7 +40,7 @@ The Computer Science Experience introduces first-year students to the discipline
 A one-hour-a-week seminar with three jobs:
 
 1. **Show you the whole map.** You'll spend the next four years going deep. This course goes wide first, so you can choose deliberately instead of by accident. Security, AI, systems, networks, data, open source: one week each, enough to know whether you want more.
-2. **Make you a cohort.** You are the CS Class of 2030. You'll be assigned to a small group on day one, you'll sit with them all semester, you'll have an upper-level peer mentor, and there will be snacks. Four years is a long time to do alone.
+2. **Make you a cohort.** You are the CS Class of 2030. You'll be assigned to a small group on day one, you'll work with them all semester, you'll have an upper-level peer mentor, and there will be snacks. Four years is a long time to do alone.
 3. **Get you building now.** You'll set up a real developer environment, learn Git, learn to drive an AI coding agent, and ship one small thing that works and lives on the public internet under your name, before winter break of your first semester.
 
 ### Prerequisites
@@ -92,7 +92,7 @@ Every meeting follows the same rhythm. Fifty minutes goes fast; structure protec
 | 35–45 | Pod activity or live coding-agent demo |
 | 45–50 | Wrap-up: what's due, what's coming next week |
 
-**Pods.** On the first day you're assigned to a **pod of about five students**: your default group for the whole semester. You sit together, do in-class activities together, and share a peer mentor. Pods are assigned, not chosen, because you already know how to make friends with people like you and the point is to widen that.
+**Pods.** On the first day you're assigned to a **pod of about five students**: your default group for the whole semester. You do in-class activities together and share a peer mentor. Sit wherever you like when you walk in; when there's a pod activity, find each other for it. Pods are assigned, not chosen, because you already know how to make friends with people like you and the point is to widen that.
 
 **This Week in CS.** Once during the semester you'll open class with **one slide and ninety seconds** about something that happened in computing recently: a launch, a breach, a paper, a lawsuit, a shutdown. Three students go each week, and your date is assigned in the Git session. Not graded on polish, no rubric, and one slide is genuinely one slide. It exists so you start following the field, and so that every person in this room has spoken in front of the class before the semester is over. Peer mentors go first and will do it imperfectly on purpose, so you can see how low the bar is. **[What to Read](reading.md)** is the companion: where to find a story and what to say about it in ninety seconds.
 

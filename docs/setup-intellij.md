@@ -17,7 +17,7 @@
 
 > **You do not have to install Java yourself, and this is the main reason this course uses IntelliJ.** Java comes as something called a **JDK**, and getting one onto a laptop by hand is the single most common way a first week goes wrong. IntelliJ fetches one for you from a dialog box, in about two minutes. **[Step 4](#4-give-it-a-java-to-run-on) walks through it.**
 
-**You do not need a terminal for this page, or for the Karel session.** You'll set up a proper terminal before the **Git session on Wed, Sep 9**, and [that guide](tool-setup.md#5-a-terminal-git-and-nodejs) is waiting for you when you get there.
+**You do not need a terminal for this page, or for the Karel session.** You'll set up a proper terminal before the **Git session on Wed, Sep 16**, and [that guide](tool-setup.md#5-a-terminal-git-and-nodejs) is waiting for you when you get there.
 
 ---
 

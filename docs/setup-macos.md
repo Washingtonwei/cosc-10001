@@ -2,7 +2,7 @@
 
 The Mac companion to the [Windows setup guide](setup-windows.md): same environment, different install commands.
 
-> ### 📅 This is due before **Wed, Sep 9**, the Git session. Not before Wed, Sep 2.
+> ### 📅 This was due before **Wed, Sep 9**. We use all of it in class on **Wed, Sep 16**, the Git session, so if anything here still isn't working, fix it before then.
 > The Karel session needs nothing but IntelliJ, and [that guide](setup-intellij.md) is the whole of that week's homework. Doing this one early is fine; doing it *instead* is not.
 
 > ### ⏱️ The required part is about half an hour, most of it download bars.
@@ -88,7 +88,7 @@ brew --version
 
 ## 4. Install Git
 
-Git is how your code gets a history and gets to GitHub. We use it in class on Wed, Sep 9.
+Git is how your code gets a history and gets to GitHub. We use it in class on Wed, Sep 16.
 
 ```bash
 brew install git

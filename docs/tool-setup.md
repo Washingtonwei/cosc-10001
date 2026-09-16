@@ -95,7 +95,7 @@ Download IntelliJ from **<https://www.jetbrains.com/idea/download/>**, then open
 
 ## 5. A terminal, Git, and Node.js
 
-**Not this week.** This one is due before the **Git session on Wed, Sep 9**, and there's nothing to gain by doing it early.
+**Due before Wed, Sep 9.** We use all of it in class on **Wed, Sep 16**, the Git session.
 
 Follow the guide for your machine, on your own time. We do not install anything in class: fifty minutes a week does not stretch to a room of people downloading the same files, and class time is for fixing what broke.
 

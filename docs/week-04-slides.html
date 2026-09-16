@@ -134,6 +134,23 @@
     font-weight:650; cursor:pointer; opacity:.5; transition:opacity .15s ease;
   }
   .modebtn:hover{opacity:1; border-color:var(--accent)}
+
+  /* Copy buttons on the command blocks. ⛔ Never on pre.danger (the rm joke) and
+     never on pre.nocopy: this room types what it sees. */
+  pre{position:relative}
+  .copy{
+    position:absolute; top:.5em; right:.5em; z-index:5;
+    background:#26262c; color:var(--dim);
+    border:1px solid #3b3b44; border-radius:.35rem;
+    padding:.35em .8em; cursor:pointer;
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:clamp(.62rem,1vw,.9rem); font-weight:650;
+    opacity:0; transition:opacity .15s ease, color .15s ease, border-color .15s ease;
+  }
+  pre:hover .copy, .copy:focus-visible{opacity:.8}
+  .copy:hover{opacity:1; color:var(--fg); border-color:var(--accent)}
+  .copy.done{opacity:1; color:var(--accent); border-color:var(--accent)}
+  body.page .copy{opacity:.55}
 </style>
 </head>
 <body>
@@ -262,7 +279,7 @@ java -cp <span class="warn">".;lib/karel.jar"</span> MyKarel</pre>
 
 <section class="slide" data-min="21">
   <div class="kicker">Big idea 2 · everybody has this folder</div>
-<pre>essay_final.docx
+<pre class="nocopy">essay_final.docx
 essay_final_v2.docx
 essay_final_REAL.docx
 essay_final_REAL_usethisone.docx</pre>
@@ -403,6 +420,49 @@ git push -u origin main</pre>
   document.addEventListener("click", function(e){
     if (pageMode || document.body.classList.contains("blank")) return;
     go(i + (e.clientX < window.innerWidth * 0.25 ? -1 : 1));
+  });
+
+  // Copy button on every command block. Text is captured before the button is
+  // added, so "Copy" never lands in your clipboard. ⛔ Not on pre.danger, the rm
+  // joke, and not on pre.tree or pre.nocopy, which are not commands.
+  function fallbackCopy(text){
+    var ta = document.createElement("textarea");
+    ta.value = text; ta.setAttribute("readonly", "");
+    ta.style.position = "fixed"; ta.style.top = "-1000px";
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+  function flash(btn, ok){
+    btn.textContent = ok ? "Copied" : "Copy failed";
+    btn.classList.toggle("done", ok);
+    setTimeout(function(){ btn.textContent = "Copy"; btn.classList.remove("done"); }, 1400);
+  }
+  Array.prototype.forEach.call(document.querySelectorAll("pre"), function(pre){
+    if (pre.classList.contains("danger") || pre.classList.contains("tree")
+        || pre.classList.contains("nocopy")) return;
+    var text = pre.textContent.replace(/\s+$/, "");
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "copy";
+    btn.textContent = "Copy";
+    btn.addEventListener("click", function(e){
+      e.preventDefault();
+      e.stopPropagation();          // without this the deck advances a slide under you
+      btn.blur();                   // so the next space bar moves the deck, not the button
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function(){ flash(btn, true); },
+          function(){ flash(btn, fallbackCopy(text)); }
+        );
+      } else {
+        flash(btn, fallbackCopy(text));
+      }
+    });
+    pre.appendChild(btn);
   });
 
   var start = parseInt((location.hash || "").slice(1), 10);

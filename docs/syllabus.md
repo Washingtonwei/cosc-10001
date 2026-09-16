@@ -87,14 +87,14 @@ Every meeting follows the same rhythm. Fifty minutes goes fast; structure protec
 
 | Minutes | Segment |
 |---|---|
-| 0–5 | **This Week in CS**: three students, one slide and 90 seconds each |
+| 0–5 | **This Week in CS**: two to four students, one slide and 90 seconds each |
 | 5–35 | Main topic, guest speaker, or workshop |
 | 35–45 | Pod activity or live coding-agent demo |
 | 45–50 | Wrap-up: what's due, what's coming next week |
 
 **Pods.** On the first day you're assigned to a **pod of about five students**: your default group for the whole semester. You do in-class activities together and share a peer mentor. Sit wherever you like when you walk in; when there's a pod activity, find each other for it. Pods are assigned, not chosen, because you already know how to make friends with people like you and the point is to widen that.
 
-**This Week in CS.** Once during the semester you'll open class with **one slide and ninety seconds** about something that happened in computing recently: a launch, a breach, a paper, a lawsuit, a shutdown. Three students go each week, and your date is assigned in the Git session. Not graded on polish, no rubric, and one slide is genuinely one slide. It exists so you start following the field, and so that every person in this room has spoken in front of the class before the semester is over. Peer mentors go first and will do it imperfectly on purpose, so you can see how low the bar is. **[What to Read](reading.md)** is the companion: where to find a story and what to say about it in ninety seconds.
+**This Week in CS.** Once during the semester you'll open class with **one slide and ninety seconds** about something that happened in computing recently: a launch, a breach, a paper, a lawsuit, a shutdown. Two to four students go each week, and your date is assigned in the Git session. Not graded on polish, no rubric, and one slide is genuinely one slide. It exists so you start following the field, and so that every person in this room has spoken in front of the class before the semester is over. Peer mentors go first and will do it imperfectly on purpose, so you can see how low the bar is. **[What to Read](reading.md)** is the companion: where to find a story and what to say about it in ninety seconds.
 
 **Snacks.** There will be snacks. Grab them on your way in, not on the clock. Ingredients are labeled and there's always a nut-free option. **Tell me about allergies and dietary restrictions on the Day 1 survey.**
 

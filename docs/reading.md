@@ -55,7 +55,7 @@ For the walk across campus, the gym, or the drive home.
 
 ## Your ninety seconds
 
-Once during the semester you'll open class with **one slide and ninety seconds** about something that happened in computing recently. Three students go each week, from **Wed, Sep 16 through Wed, Nov 18**, and you get your date in the Git session. No paper, no rubric, not graded on polish. It counts as participation. The slot is the deadline; the habit is the point.
+Once during the semester you'll open class with **one slide and ninety seconds** about something that happened in computing recently. Two to four students go each week, from **Wed, Sep 23 through Wed, Nov 18**, and you get your date in the Git session. No paper, no rubric, not graded on polish. It counts as participation. The slot is the deadline; the habit is the point.
 
 **What works:** a launch, a breach, a paper that surprised people, a lawsuit or a new regulation, an outage with a good postmortem, a shutdown of something people relied on.
 

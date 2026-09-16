@@ -114,11 +114,15 @@ node --version
 npm --version
 copilot --version
 codex --version
+git config --global user.name
+git config --global user.email
 ```
 
-**Five lines, five version numbers.** If one errors, that tool didn't install: go back to its section. If a tool you just installed says it isn't recognized, close the window and open a new one before you believe it.
+**Five version numbers, then your name and your email.** If one of the first five errors, that tool didn't install: go back to its section. If a tool you just installed says it isn't recognized, close the window and open a new one before you believe it.
 
-That's the assignment. **If you got five versions, you're done and you can stop here.**
+**If the last two print nothing**, Git doesn't know who you are yet and your first `git commit` will refuse to run. Go back to [step 2](#2-install-git) and run the identity lines. This is the one thing on this page that looks fine until the moment it matters.
+
+That's the assignment. **If you got five versions and two lines about yourself, you're done and you can stop here.**
 
 ---
 
@@ -258,6 +262,8 @@ npm install -g @anthropic-ai/claude-code
 ## Troubleshooting
 
 **`git`, `node`, `copilot`, or `codex` "is not recognized."** Close the terminal window completely and open a new one. This fixes it most of the time, because a window that was already open has a stale list of where programs live. If it persists after a restart, check npm's global folder with `npm config get prefix`, and test with `Get-Command copilot`.
+
+**`git commit` says *"Please tell me who you are."*** Git won't record a commit it can't sign. It's the two `git config --global` lines in [step 2](#2-install-git), and the error message prints them for you. Run them once and commit again; you never do it again on this machine.
 
 **`winget` isn't recognized.** You're on an older Windows build. Install **App Installer** from the Microsoft Store, or bring the laptop to office hours.
 

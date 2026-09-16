@@ -159,11 +159,15 @@ node --version
 npm --version
 copilot --version
 codex --version
+git config --global user.name
+git config --global user.email
 ```
 
-**Six lines, six version numbers.** If one errors, that tool didn't install: go back to its section. If a tool you just installed says `command not found`, close the window and open a new one before you believe it.
+**Six version numbers, then your name and your email.** If one of the first six errors, that tool didn't install: go back to its section. If a tool you just installed says `command not found`, close the window and open a new one before you believe it.
 
-That's the assignment. **If you got six versions, you're done and you can stop here.**
+**If the last two print nothing**, Git doesn't know who you are yet and your first `git commit` will refuse to run. Go back to [step 4](#4-install-git) and run the identity lines. This is the one thing on this page that looks fine until the moment it matters.
+
+That's the assignment. **If you got six versions and two lines about yourself, you're done and you can stop here.**
 
 ---
 
@@ -276,6 +280,8 @@ npm install -g @anthropic-ai/claude-code
 **`command not found` right after installing something.** The tool installed fine; your shell has a stale list of where programs live. **Close Terminal completely and reopen it.** If it persists, run `which node` and `echo $PATH`. If `which` finds nothing, the install didn't finish: run it again and read the output.
 
 **`brew: command not found`.** The Apple Silicon PATH step in section 3 didn't run. Go back and run it. This is the most common failure on this page by a wide margin.
+
+**`git commit` says *"Please tell me who you are."*** Git won't record a commit it can't sign. It's the two `git config --global` lines in [step 4](#4-install-git), and the error message prints them for you. Run them once and commit again; you never do it again on this machine.
 
 **`git` asks to install the Command Line Tools.** That's step 2 and it hasn't run yet. Let it.
 

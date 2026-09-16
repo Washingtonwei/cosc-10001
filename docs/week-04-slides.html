@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 4 Slides · COSC 10001</title>
+<!--
+  Student copy of the Week 4 slides, Wed, Sep 16, 2026.
+  Your Terminal, Git & GitHub.
+
+  This is the version published on the course site. The presenter copy lives in
+  instructor/sessions/WEEK-04-DECK.html and is the one to edit for class: it
+  carries the timing badges. Changing one means changing the other.
+
+  Arrow keys or click to move. F for fullscreen. P reads the whole deck as a
+  normal scrolling page, which is the one you want for looking something up.
+-->
+<style>
+  :root{
+    --bg:#0e1013; --fg:#f4f4f5; --dim:#a1a1aa; --accent:#a06ee1;
+    --accent-soft:#2a1f3d; --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html,body{height:100%}
+  body{
+    background:var(--bg); color:var(--fg); overflow:hidden;
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .slide{
+    position:absolute; inset:0; display:none;
+    flex-direction:column; justify-content:center;
+    padding:5vh 7vw; gap:2.2vh;
+  }
+  .slide.on{display:flex}
+
+  h1{font-size:clamp(2.6rem,7.2vw,7rem); line-height:1.02; letter-spacing:-.03em; font-weight:800}
+  h2{font-size:clamp(2rem,5vw,4.6rem); line-height:1.08; letter-spacing:-.02em; font-weight:750}
+  p{font-size:clamp(1.15rem,2.3vw,2.1rem); line-height:1.45; max-width:42ch}
+  p.wide{max-width:56ch}
+  .dim{color:var(--dim)}
+  .accent{color:var(--accent)}
+  strong{color:#fff; font-weight:750}
+
+  ul{list-style:none; display:flex; flex-direction:column; gap:1.6vh; margin-top:1vh}
+  li{
+    font-size:clamp(1.15rem,2.5vw,2.2rem); line-height:1.3;
+    padding-left:1.5em; position:relative; max-width:48ch;
+  }
+  li::before{content:"\2014"; position:absolute; left:0; color:var(--accent)}
+  ol.numbered{list-style:none; display:flex; flex-direction:column; gap:2vh; margin-top:1vh; counter-reset:n}
+  ol.numbered li{padding-left:2em; counter-increment:n}
+  ol.numbered li::before{content:counter(n); color:var(--accent); font-weight:800}
+
+  .kicker{
+    font-size:clamp(.75rem,1.15vw,1rem); letter-spacing:.22em; text-transform:uppercase;
+    color:var(--accent); font-weight:700;
+  }
+  .quote{
+    font-size:clamp(1.3rem,2.9vw,2.6rem); line-height:1.35; max-width:46ch;
+    border-left:4px solid var(--accent); padding-left:1em; font-weight:500;
+  }
+
+  /* the hand-to-keyboard mapping, which is the biggest board saver in the deck */
+  table.map2{border-collapse:collapse; margin-top:1vh; width:100%; max-width:64ch}
+  table.map2 td{
+    padding:1.35vh .8vw; border-bottom:1px solid #26262c; vertical-align:middle;
+    font-size:clamp(.95rem,2vw,1.8rem);
+  }
+  table.map2 td:last-child{
+    font-family:var(--mono); color:var(--accent); font-weight:600; white-space:nowrap;
+  }
+  table.map2 tr.hi td{background:var(--accent-soft)}
+  table.map2 tr.hi td:first-child{font-weight:700}
+
+  pre{
+    font-family:var(--mono); font-size:clamp(.85rem,1.9vw,1.7rem); line-height:1.5;
+    background:#17181d; border:1px solid #26262c; border-radius:.6rem;
+    padding:2.2vh 1.4vw; overflow:auto; max-width:100%;
+  }
+  pre.tree{font-size:clamp(.8rem,1.65vw,1.45rem); line-height:1.45}
+  pre .c{color:#71717a}
+  pre .k{color:var(--accent); font-weight:700}
+  pre .warn{color:#fbbf24; font-weight:700}
+  /* the rm joke. Struck through on purpose: this room types what it sees. */
+  pre.danger{
+    border-color:#7f1d1d; background:#1d1113; color:#f87171;
+    font-size:clamp(1.2rem,3.4vw,3rem); font-weight:800; text-align:center;
+    text-decoration:line-through; text-decoration-thickness:.09em;
+    letter-spacing:.02em; padding:3vh 1.4vw;
+  }
+  pre.danger .note{
+    display:block; text-decoration:none; color:#a1a1aa;
+    font-size:.42em; font-weight:600; margin-top:.9em; letter-spacing:0;
+  }
+  .cols{display:grid; grid-template-columns:1fr 1fr; gap:1.4vw; margin-top:1vh}
+  .cols h3{
+    font-size:clamp(.8rem,1.3vw,1.15rem); letter-spacing:.14em; text-transform:uppercase;
+    color:var(--dim); font-weight:700; margin-bottom:.8vh;
+  }
+
+  .badge{
+    position:fixed; top:1.4vh; right:2vw; z-index:20;
+    font-size:clamp(.7rem,1.1vw,1rem); font-weight:700; color:var(--accent);
+    background:var(--accent-soft); border:1px solid #3b2d52; border-radius:.4rem;
+    padding:.45em .9em; font-variant-numeric:tabular-nums;
+  }
+  .count{
+    position:fixed; bottom:1.6vh; right:2vw; font-size:clamp(.7rem,1.1vw,1rem);
+    color:#52525b; font-variant-numeric:tabular-nums;
+  }
+  .hint{
+    position:fixed; bottom:1.6vh; left:2vw; font-size:clamp(.7rem,1.1vw,1rem); color:#52525b;
+  }
+  .bar{position:fixed; left:0; bottom:0; height:3px; background:var(--accent); transition:width .18s ease}
+
+  /* B blanks the screen. The demo is the lesson; the deck gets out of the way. */
+  body.blank .slide, body.blank .count, body.blank .bar,
+  body.blank .hint, body.blank .badge, body.blank .modebtn{display:none}
+  body.blank{background:#000}
+
+  body.page{height:auto; overflow:auto}
+  body.page .slide{
+    position:static; display:flex; justify-content:flex-start;
+    min-height:auto; padding:6vh 7vw 7vh; border-bottom:1px solid #26262c;
+  }
+  body.page .count, body.page .bar, body.page .hint, body.page .badge{display:none}
+
+  .modebtn{
+    position:fixed; top:1.4vh; left:2vw; z-index:20;
+    background:var(--accent-soft); color:var(--fg);
+    border:1px solid #3b2d52; border-radius:.4rem;
+    padding:.5em 1em; font:inherit; font-size:clamp(.7rem,1.05vw,.95rem);
+    font-weight:650; cursor:pointer; opacity:.5; transition:opacity .15s ease;
+  }
+  .modebtn:hover{opacity:1; border-color:var(--accent)}
+</style>
+</head>
+<body>
+
+<button class="modebtn" id="modebtn">Read as page</button>
+
+<div class="count" id="count"></div>
+<div class="hint">arrow keys · F fullscreen · <strong>P read as page</strong></div>
+<div class="bar" id="bar"></div>
+
+
+<section class="slide" data-min="0">
+  <div class="kicker">COSC 10001 · Week 4 · Wed, Sep 16, 2026</div>
+  <h1>Your Terminal,<br>Git &amp; GitHub</h1>
+  <p class="dim">Where your files actually live, and how to undo anything</p>
+</section>
+
+
+<section class="slide" data-min="10">
+  <div class="kicker">You have read this before</div>
+  <h2>Two ways to<br>say one thing</h2>
+  <p class="wide dim">You met this three weeks ago, about one checkbox in IntelliJ. Today it is the whole hour.</p>
+</section>
+
+
+<section class="slide" data-min="10">
+  <div class="kicker">The same computer, two doors</div>
+  <table class="map2">
+    <tr><td>Look inside a window</td><td>ls</td></tr>
+    <tr><td>Double-click a folder</td><td>cd karel-starter</td></tr>
+    <tr><td>Click the back arrow</td><td>cd ..</td></tr>
+    <tr><td>Read the title bar: <em>where am I?</em></td><td>pwd</td></tr>
+    <tr><td>Double-click a file</td><td>open &middot; start</td></tr>
+    <tr class="hi"><td>Open this folder in a window</td><td>open . &middot; explorer .</td></tr>
+  </table>
+  <p class="dim">The bridge goes both ways. You are not leaving the Finder behind.</p>
+</section>
+
+
+<section class="slide" data-min="12">
+  <div class="kicker">Convenient depends on how many times</div>
+  <h2>A hundred files</h2>
+  <div class="cols">
+    <div>
+      <h3>macOS</h3>
+<pre>mkdir ~/Desktop/scratch
+cd ~/Desktop/scratch
+
+<span class="k">for</span> i <span class="k">in</span> {1..100}; <span class="k">do</span>
+  touch "student_$i.txt"
+<span class="k">done</span></pre>
+    </div>
+    <div>
+      <h3>Windows</h3>
+<pre>1..100 | ForEach-Object {
+  New-Item "student_$_.txt" -ItemType File
+}</pre>
+    </div>
+  </div>
+  <p class="dim">Now do that with the mouse. I will wait.</p>
+</section>
+
+
+<section class="slide" data-min="12">
+  <div class="kicker">The one place this really is dangerous</div>
+  <h2>Do not try<br>this at home</h2>
+<pre class="danger">rm -rf /<span class="note">deletes everything. no trash, no undo, no "are you sure?"</span></pre>
+  <p class="wide dim">In 1998 somebody at Pixar ran this on the wrong folder and deleted most of <strong>Toy Story 2</strong>. It survived because a technical director working from home with a newborn happened to have a copy of the whole film.</p>
+  <p class="quote">That copy was their version control.<br><span class="dim">In six minutes you get a much better one.</span></p>
+</section>
+
+
+<section class="slide" data-min="12">
+  <div class="kicker">Why bother, if the mouse is easier?</div>
+  <ol class="numbered">
+    <li>A <strong>GUI is a menu somebody else wrote.</strong> Every button exists because a person decided to build that button.</li>
+    <li>Next Wednesday you hand work to <strong>an agent, and it has no hand.</strong> Everything it does, it does here.</li>
+  </ol>
+  <p class="dim">Two ways in. Today we learn the one you do not have yet.</p>
+</section>
+
+
+<section class="slide" data-min="13">
+  <div class="kicker">Big idea 1</div>
+  <h2>A filesystem<br>is a tree</h2>
+<pre class="tree">/
+└── Users
+    └── you
+        ├── Desktop
+        │   └── karel-starter        <span class="warn">← you are here</span>
+        │       ├── MyKarel.java
+        │       ├── lib/karel.jar
+        │       └── worlds/
+        ├── Downloads
+        └── Documents</pre>
+</section>
+
+
+<section class="slide" data-min="13">
+  <div class="kicker">The three ideas · the commands are googleable</div>
+  <ol class="numbered">
+    <li>A filesystem is <strong>a tree.</strong> The icons are a costume over it.</li>
+    <li>You are always <strong>standing somewhere</strong> in that tree. <span class="accent">pwd</span> asks where, <span class="accent">cd</span> walks, <span class="accent">ls</span> looks around.</li>
+    <li><strong>"command not found"</strong> does not mean the program is missing. It means the computer does not know where to look. That is <span class="accent">PATH</span>.</li>
+  </ol>
+</section>
+
+
+<section class="slide" data-min="18">
+  <div class="kicker">Run Karel from the terminal</div>
+  <div class="cols">
+    <div>
+      <h3>macOS</h3>
+<pre>javac -cp lib/karel.jar MyKarel.java
+java -cp <span class="warn">".:lib/karel.jar"</span> MyKarel</pre>
+    </div>
+    <div>
+      <h3>Windows</h3>
+<pre>javac -cp lib/karel.jar MyKarel.java
+java -cp <span class="warn">".;lib/karel.jar"</span> MyKarel</pre>
+    </div>
+  </div>
+  <p class="dim">One character apart. <strong>Colon on macOS, semicolon on Windows.</strong> Copy the side that is yours.</p>
+</section>
+
+
+<section class="slide" data-min="21">
+  <div class="kicker">Big idea 2 · everybody has this folder</div>
+<pre>essay_final.docx
+essay_final_v2.docx
+essay_final_REAL.docx
+essay_final_REAL_usethisone.docx</pre>
+  <p class="wide">That is version control, <strong>done badly, by hand.</strong> Git is that, done properly, by a computer.</p>
+</section>
+
+
+<section class="slide" data-min="21">
+  <div class="kicker">And here is the version you already know</div>
+  <h2>Git is save points</h2>
+  <table class="map2">
+    <tr><td>Saving before the boss fight</td><td>git commit</td></tr>
+    <tr><td>Naming the save</td><td>the commit message</td></tr>
+    <tr><td>Your list of saves</td><td>git log</td></tr>
+    <tr><td>Load the last save</td><td>git restore .</td></tr>
+    <tr class="hi"><td>Cloud saves, on somebody else's machine</td><td>GitHub</td></tr>
+  </table>
+  <p class="wide dim">Nobody is frightened of dying in a game. You saved. <strong>No version control is a roguelike:</strong> one run, no saves, good luck.</p>
+</section>
+
+
+<section class="slide" data-min="21">
+  <div class="kicker">One difference, and Git wins</div>
+  <h2>The failed run<br>stays in the log</h2>
+  <p class="wide">Reload a save and the game forgets you died. <strong>Git keeps every attempt</strong>, including the ones that did not work.</p>
+  <p class="quote">Which is why you got to watch me change my mind about your homework.<br><span class="dim">And why I cannot quietly delete the evidence.</span></p>
+</section>
+
+
+<section class="slide" data-min="21">
+  <div class="kicker">Three things to hold onto</div>
+  <ol class="numbered">
+    <li>A <strong>commit</strong> is a save point with a note attached. You can always go back to one.</li>
+    <li>The <strong>history is a story.</strong></li>
+    <li><strong>GitHub is not Git.</strong> Git runs on your laptop. GitHub is a website that holds copies. Either one works without the other.</li>
+  </ol>
+</section>
+
+
+<section class="slide" data-min="27">
+  <div class="kicker">Break it on purpose, then undo it</div>
+<pre><span class="c"># what did I just break?</span>
+git diff
+
+<span class="c"># and here is it never having happened</span>
+<span class="k">git restore .</span></pre>
+  <p class="wide">Not backups. <strong>The ability to try something, watch it fail, and get back to working in one command.</strong></p>
+</section>
+
+
+<section class="slide" data-min="37">
+  <div class="kicker">Your Karel repo, start to finish</div>
+  <h2>The whole thing,<br>once</h2>
+<pre>git init
+git add .
+git commit -m "Karel reaches the beeper"
+
+<span class="c"># make the empty repo on github.com first.
+# Public, and do NOT tick "Add a README"</span>
+git remote add origin https://github.com/<span class="warn">USERNAME</span>/karel-starter.git
+git push -u origin main</pre>
+  <p class="dim">After the first push it is <span class="accent">add</span> → <span class="accent">commit</span> → <span class="accent">push</span>, forever.</p>
+  <p class="dim">⭐ <strong>This is the slide to come back to.</strong> Build Checkpoint 1 is this repo.</p>
+</section>
+
+
+<section class="slide" data-min="45">
+  <div class="kicker">Before you leave the room</div>
+  <h2>Post two links<br>in Slack</h2>
+  <ul>
+    <li>your <strong>GitHub profile</strong></li>
+    <li>your <strong>Karel repo</strong></li>
+  </ul>
+  <p class="dim">Two of your five Professional Foundations boxes, collected today.</p>
+</section>
+
+
+<section class="slide">
+  <div class="kicker">Where to look things up</div>
+  <h2>When you forget<br>one of these</h2>
+  <ul>
+    <li><strong>Commands, both platforms:</strong> the <em>Useful terminal commands</em> table on your setup page, Windows or macOS</li>
+    <li><strong>Git refuses to commit?</strong> Troubleshooting, same page. It is the two <code>git config</code> lines</li>
+    <li><strong>This deck:</strong> press <strong>P</strong> to read it as one page and search it</li>
+    <li><strong>Still stuck:</strong> your pod, your mentor, then <em>How to Ask for Help</em> in the syllabus</li>
+  </ul>
+</section>
+
+
+<section class="slide" data-min="48">
+  <div class="kicker">Ninety seconds, then go</div>
+  <h2>Ship-It</h2>
+  <p class="wide"><strong>20% of your grade.</strong> Due Sun, Dec 6. Demo Day is Wed, Dec 9. The menu and the rubric are on the course site.</p>
+  <p class="quote">A tiny thing that works beats an ambitious thing that doesn't.<br><span class="dim">Do not start this in November.</span></p>
+</section>
+
+
+<script>
+  var slides = Array.prototype.slice.call(document.querySelectorAll(".slide"));
+  var count = document.getElementById("count");
+  var bar = document.getElementById("bar");
+  var i = 0;
+
+  function draw(){
+    slides.forEach(function(s, n){ s.classList.toggle("on", n === i); });
+    count.textContent = (i + 1) + " / " + slides.length;
+    bar.style.width = ((i + 1) / slides.length * 100) + "%";
+    try { location.hash = i + 1; } catch (e) {}
+  }
+  function go(n){ i = Math.max(0, Math.min(slides.length - 1, n)); draw(); }
+
+  var modebtn = document.getElementById("modebtn");
+  var pageMode = false;
+  function setMode(on){
+    pageMode = on;
+    document.body.classList.toggle("page", on);
+    modebtn.textContent = on ? "▶ Present" : "Read as page";
+    if (!on) draw();
+  }
+  modebtn.addEventListener("click", function(e){ e.stopPropagation(); setMode(!pageMode); });
+
+  document.addEventListener("keydown", function(e){
+    var k = e.key;
+    if (k === "b" || k === "B") { e.preventDefault(); document.body.classList.toggle("blank"); return; }
+    if (document.body.classList.contains("blank")) { document.body.classList.remove("blank"); return; }
+    if (k === "p" || k === "P") { e.preventDefault(); setMode(!pageMode); return; }
+    if (k === "f" || k === "F") {
+      if (document.fullscreenElement) document.exitFullscreen();
+      else document.documentElement.requestFullscreen();
+      return;
+    }
+    if (pageMode) return;
+    if (k === "ArrowRight" || k === " " || k === "PageDown" || k === "Enter") { e.preventDefault(); go(i + 1); }
+    else if (k === "ArrowLeft" || k === "PageUp" || k === "Backspace") { e.preventDefault(); go(i - 1); }
+    else if (k === "Home") { go(0); }
+    else if (k === "End") { go(slides.length - 1); }
+  });
+  document.addEventListener("click", function(e){
+    if (pageMode || document.body.classList.contains("blank")) return;
+    go(i + (e.clientX < window.innerWidth * 0.25 ? -1 : 1));
+  });
+
+  var start = parseInt((location.hash || "").slice(1), 10);
+  go(isNaN(start) ? 0 : start - 1);
+  setMode(true);
+</script>
+</body>
+</html>

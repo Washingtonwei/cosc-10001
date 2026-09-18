@@ -137,8 +137,8 @@ How would you prompt or work differently on the next project?
 |---|---|
 | **Wed, Sep 16** | Project announced. Start thinking |
 | **Wed, Sep 30** | Pick your project. Tell your pod what you chose |
-| **Wed, Nov 4** | Deadline to propose a project not on the menu · pod check-in: everyone shows their repo, even if it's broken |
-| **Wed, Nov 18** | Second pod check-in: **it should run by now**, even if it's ugly |
+| **Wed, Nov 4** | Deadline to propose a project not on the menu · your mentor checks in with your pod: show them your repo, even if it's broken |
+| **Wed, Nov 18** | Second mentor check-in: **it should run by now**, even if it's ugly |
 | **Sun, Dec 6** | **Everything due**: code, README, AI-NOTES pushed |
 | **Wed, Dec 9** | Demo Day, the last class |
 

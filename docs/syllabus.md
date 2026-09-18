@@ -201,7 +201,7 @@ Attend **three** approved Computer Science events during the semester. This is h
 
 Those specifics exist for a reason: they are things you can only produce if you were actually in the room and paying attention.
 
-**There are two checkpoints**, one for 2 of 3 and one for all 3; both dates are in the [Schedule](schedule.md). The in-class **Faculty Research Lightning Talks** are not an engagement event; you still need three outside of class.
+**There are three checkpoints**, one for your first, one for 2 of 3, and one for all 3; all three dates are in the [Schedule](schedule.md). Submit each reflection within a week of the event rather than saving them up, and if an event lands close to a checkpoint, **the checkpoint date is the one that counts**. The in-class **Faculty Research Lightning Talks** are not an engagement event; you still need three outside of class.
 
 ---
 

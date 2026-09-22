@@ -81,9 +81,13 @@ LinkedIn is where internship recruiters look first. Already have a profile? Upda
     - **Your GitHub link:** click **Edit profile** (the pencil) → **Contact info** → **Website**, and add `https://github.com/YOUR-USERNAME`
     - **Your custom URL:** click **Public profile & URL** (on the right of your profile page) → the pencil next to your URL, and change it to your name, like `linkedin.com/in/firstname-lastname`
 3. Optional but worth two minutes: an **About** section of two or three sentences, which can borrow from your profile README.
-4. **Check that it worked:** open your custom URL in a private browser window. It should show your name, photo, and headline.
+4. **Make your first connections.** Search LinkedIn by name, click **Connect** on each person, and click **Follow** on the page:
+    - **Bingyang Wei**, your instructor
+    - **Your peer mentor**
+    - **TCU Computer Science**: <https://www.linkedin.com/school/tcu-computer-science>
+5. **Check that it worked:** open your custom URL in a private browser window. It should show your name, photo, and headline.
 
-✅ **You're done when** your custom LinkedIn URL shows those five things.
+✅ **You're done when** your custom LinkedIn URL shows those five things, and you've sent your two connection requests and followed TCU Computer Science.
 
 ---
 

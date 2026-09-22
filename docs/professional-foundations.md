@@ -112,16 +112,20 @@ Before you save the PDF, check three things: every link works, your name matches
 
 ## How to submit
 
-Submit to the **Professional Foundations** assignment in TCU Online by **Wed, Sep 30**. You submit **three links, one PDF, and your Pack status**:
+**Email it to your peer mentor by Wed, Sep 30.** One email, with the résumé attached and everything else pasted in. Don't have your mentor's email address? Ask your pod or ask in Slack.
 
-| What | Paste this |
-|---|---|
-| Student Pack | *Approved*, or *pending since* the date you applied |
-| Your repository | `https://github.com/YOUR-USERNAME/YOUR-REPO` |
-| Your profile README | `https://github.com/YOUR-USERNAME` |
-| LinkedIn | `https://www.linkedin.com/in/YOUR-CUSTOM-URL` |
-| Résumé | Attach the PDF |
+**Subject:** `Professional Foundations: Firstname Lastname`
 
-**Last check before you submit:** open every link in a private browser window, where you're not signed in. That's how we'll see them, and it catches the most common mistake, a repository that's still private.
+**Body**, copy this and fill it in:
+
+```
+Student Pack: approved (or: pending since Sep __)
+Repository: https://github.com/YOUR-USERNAME/YOUR-REPO
+Profile README: https://github.com/YOUR-USERNAME
+LinkedIn: https://www.linkedin.com/in/YOUR-CUSTOM-URL
+Résumé: attached
+```
+
+**Last check before you send:** open every link in a private browser window, where you're not signed in. That's how your mentor will see them, and it catches the most common mistake, a repository that's still private.
 
 Stuck on any step? Ask in Slack or ask your peer mentor. The fastest way to get help is to say which step, what you tried, and what happened.

@@ -39,7 +39,7 @@ Each session here closes with ten minutes of *"now do it with your agent"*, a sm
 
 | Week | Date | Session | Before class | Due & announcements |
 |---|---|---|---|---|
-| 6 | Wed, Sep 30 | 👥 **Thriving in College.** Student panel, no laptops. Three upperclassmen, and you ask the questions | Bring a question. Anonymous is fine | The written version, with deadlines, is **[Opportunities](opportunities.md)**<br>📌 [**Professional Foundations**](syllabus.md#professional-foundations-10) **due** · [**CS Engagement**](syllabus.md#cs-engagement-experiences-3-15) **1 of 3 due**<br>[Ship-It](ship-it.md#timeline): pick your project and tell your pod what you chose |
+| 6 | Wed, Sep 30 | 👥 **Thriving in College.** Student panel, no laptops. Three upperclassmen, and you ask the questions | Bring a question. Anonymous is fine | The written version, with deadlines, is **[Opportunities](opportunities.md)**<br>📌 [**Professional Foundations**](professional-foundations.md) **due** · [**CS Engagement**](syllabus.md#cs-engagement-experiences-3-15) **1 of 3 due**<br>[Ship-It](ship-it.md#timeline): pick your project and tell your pod what you chose |
 | 7 | Wed, Oct 7 | **Networks & the Internet.** What happens when you hit Enter on a URL | | 📌 [**Build Checkpoint 1**](syllabus.md#build-checkpoints-2-10) **due:** your Karel repository, your own world, and `NOTES.md` |
 | 8 | Wed, Oct 14 | 🎤 **Cybersecurity & Digital Risk.** Threat models, and a live phishing teardown of real messages. Industry guest | | |
 | 9 | Wed, Oct 21 | **How Computers Actually Work.** Memory, processes, and the rest of the story behind `command not found` | | 📌 [**Peer Mentor Meeting**](syllabus.md#peer-mentor-meeting-10) **due · [CS Engagement](syllabus.md#cs-engagement-experiences-3-15) 2 of 3 due** |
@@ -67,7 +67,7 @@ Every assignment name below links to its full spec. Which AI rules apply to each
 
 | Due | Assignment | Weight |
 |---|---|---|
-| Wed, Sep 30 | [Professional Foundations](syllabus.md#professional-foundations-10): Pack, GitHub, LinkedIn, résumé, repo, profile README | 10% |
+| Wed, Sep 30 | [Professional Foundations](professional-foundations.md): Pack, GitHub, LinkedIn, résumé, repo, profile README | 10% |
 | Wed, Sep 30 | [CS Engagement](syllabus.md#cs-engagement-experiences-3-15): 1 of 3 complete | n/a |
 | Wed, Oct 7 | [**Build Checkpoint 1**](syllabus.md#build-checkpoints-2-10): Karel repository, your own world, `NOTES.md` | 5% |
 | Wed, Oct 21 | [Peer Mentor Meeting](syllabus.md#peer-mentor-meeting-10) + 250-word reflection | 10% |

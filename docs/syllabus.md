@@ -227,7 +227,7 @@ Graded on preparation, engagement, and quality of reflection. Your mentor does n
 - [ ] Create one **public GitHub repository** containing a meaningful `README.md` and at least one commit
 - [ ] Publish a **GitHub profile README** introducing yourself
 
-Graded on completion, professionalism, and attention to detail. Your profile README doubles as the icebreaker in the Git session: your podmates will read it.
+Graded on completion, professionalism, and attention to detail. **Every step, and how to submit, is on [Professional Foundations, Step by Step](professional-foundations.md).**
 
 ---
 

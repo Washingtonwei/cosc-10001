@@ -25,6 +25,63 @@ You probably did this in the first week. If you did, and the Pack shows as appro
 
 **Your Karel repository counts**, the one you pushed in the Git session. But it needs one fix first: the `README.md` in it is the one *we* wrote, starting with *"This folder holds a robot."* A meaningful README is one *you* wrote about *your* project.
 
+### Haven't pushed your Karel repo yet? Do this first
+
+Missed the Git session, or ran out of time? Start here. It takes about fifteen minutes. If you got partway in class, pick up where you stopped: running a step twice does no harm, except the one marked below.
+
+**You need** your [terminal setup](setup-windows.md) finished ([macOS version](setup-macos.md)), because Git comes from there.
+
+**a. Make an empty repository on github.com.**
+
+1. Sign in at <https://github.com>, click **+** (top right) → **New repository**.
+2. **Repository name:** `karel-starter`.
+3. Choose **Public**.
+4. **Leave every box unticked:** no README, no `.gitignore`, no license. Your laptop already has the files, and a README made here will clash with yours at step d.
+5. Click **Create repository**. Leave that page open; you need your username from it in a minute.
+
+**b. Open a terminal inside your Karel folder.** Open the folder in IntelliJ, then click the **Terminal** icon at the bottom left (or **View → Tool Windows → Terminal**). It opens already in the right folder. Check with `git status`: anything but `not a git repository` means you have done step c before, and that's fine.
+
+**c. Save your work as a first commit.**
+
+```
+git init
+git add .
+git commit -m "Karel reaches the beeper"
+```
+
+`nothing to commit` means you did this in class. Carry on.
+
+**d. Connect your folder to GitHub and push.** Replace `USERNAME` with your GitHub username:
+
+```
+git remote add origin https://github.com/USERNAME/karel-starter.git
+git push -u origin main
+```
+
+⚠️ Run `git remote add` **once**. If it says `remote origin already exists`, you did it before; skip straight to `git push -u origin main`.
+
+**e. Sign in, the first time only.**
+
+- **Windows:** a browser window opens asking you to sign in to GitHub. Do it, and the push finishes by itself.
+- **macOS:** your terminal asks for a password and then fails, because GitHub stopped accepting passwords in 2021. Fix it once with these two commands, then run `git push -u origin main` again:
+
+    ```
+    brew install gh
+    gh auth login
+    ```
+
+    Answer its questions: **GitHub.com**, **HTTPS**, **Yes** to authenticate Git, then **Login with a web browser**. It shows a code; paste it into the page it opens.
+
+**f. Check that it worked.** Refresh your repository page on github.com. Your files should be there instead of the empty-repository instructions. From now on, sending changes up is always the same three steps: `git add`, `git commit`, `git push`.
+
+**If it fights you:**
+
+- `rejected ... (fetch first)`: you ticked *Add a README* in step a. Easiest fix: on github.com, **Settings** → scroll to the bottom → **Delete this repository**, then do step a again with every box unticked. Then `git push -u origin main`.
+- `src refspec main does not match any`: if `git commit` in step c printed an error, fix that first. Otherwise your branch is called `master`, because the `init.defaultBranch main` line from the terminal setup was skipped. Run `git branch -M main`, then push again.
+- Anything else: copy the exact error and send it to your peer mentor, with which step you were on.
+
+### Now make the README yours
+
 1. Open your Karel folder in IntelliJ, and open `README.md`.
 2. **Replace everything in it** with your own version. Four short parts are enough:
     - A title, like `# Karel the Robot`
@@ -40,8 +97,6 @@ You probably did this in the first week. If you did, and the Pack shows as appro
     ```
 
 4. **Check that it worked:** open your repository on github.com in a browser. Your new README should appear below the list of files. Also check the repository says **Public** next to its name.
-
-Never pushed your Karel repo? The push sequence is on the [Week 4 slides](week-04-slides.html). Do that first, and ask your peer mentor if it fights you.
 
 ✅ **You're done when** `https://github.com/YOUR-USERNAME/YOUR-REPO` loads in a private browser window and shows a README you wrote.
 

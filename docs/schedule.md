@@ -40,7 +40,7 @@ Each session here closes with ten minutes of *"now do it with your agent"*, a sm
 | Week | Date | Session | Before class | Due & announcements |
 |---|---|---|---|---|
 | 6 | Wed, Sep 30 | 👥 **Thriving in College.** Student panel, no laptops. Three upperclassmen, and you ask the questions | Bring a question. Anonymous is fine | The written version, with deadlines, is **[Opportunities](opportunities.md)**<br>📌 [**Professional Foundations**](professional-foundations.md) **due** · [**CS Engagement**](syllabus.md#cs-engagement-experiences-3-15) **1 of 3 due**<br>[Ship-It](ship-it.md#timeline): pick your project and tell your pod what you chose |
-| 7 | Wed, Oct 7 | **Networks & the Internet.** What happens when you hit Enter on a URL | | 📌 [**Build Checkpoint 1**](syllabus.md#build-checkpoints-2-10) **due:** your Karel repository, your own world, and `NOTES.md` |
+| 7 | Wed, Oct 7 | **Networks & the Internet.** What happens when you hit Enter on a URL<br>[Slides](week-07-slides.html){ .mat } | | 📌 [**Build Checkpoint 1**](syllabus.md#build-checkpoints-2-10) **due:** your Karel repository, your own world, and `NOTES.md` |
 | 8 | Wed, Oct 14 | 🎤 **Cybersecurity & Digital Risk.** Threat models, and a live phishing teardown of real messages. Industry guest | | |
 | 9 | Wed, Oct 21 | **How Computers Actually Work.** Memory, processes, and the rest of the story behind `command not found` | | 📌 [**Peer Mentor Meeting**](syllabus.md#peer-mentor-meeting-10) **due · [CS Engagement](syllabus.md#cs-engagement-experiences-3-15) 2 of 3 due** |
 | 10 | Wed, Oct 28 | 🎤 **AI, ML & LLMs From the Inside.** What's actually in the tool you've driven for six weeks, and why it hallucinates. Industry guest | | |

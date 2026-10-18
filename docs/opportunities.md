@@ -64,7 +64,7 @@ Some of you will start a company. Most of you won't, and nothing in this course 
 
 Two different doors, and most people only know about the first one.
 
-**At TCU.** Find a faculty member whose work interests you and ask. The [Faculty Research Lightning Talks](schedule.md#act-ii-the-map-of-cs) session exists to show you five of them in one morning. TCU's [Science & Engineering Research Center](https://cse.tcu.edu/serc/) then funds student research projects, up to **$1,500**, with applications taken twice a year, early in the fall and spring semesters.
+**At TCU.** Find a faculty member whose work interests you and ask. A departmental seminar is an easy way to hear what they work on, and it counts toward your [CS Engagement](syllabus.md#cs-engagement-experiences-3-15) too. TCU's [Science & Engineering Research Center](https://cse.tcu.edu/serc/) then funds student research projects, up to **$1,500**, with applications taken twice a year, early in the fall and spring semesters.
 
 **Somewhere else, over the summer.** NSF **Research Experiences for Undergraduates** are paid summer research positions at universities across the country, with a stipend and usually housing. Browse the [REU site directory](https://www.nsf.gov/funding/initiatives/reu).
 
@@ -119,7 +119,7 @@ Our [Thriving in College](schedule.md#act-ii-the-map-of-cs) panel includes a stu
 
 None of this is a competitive application process at your stage. It's an email.
 
-> *"Hi Dr. ———, I'm a first-year CS student. I heard your lightning talk about ———. Is there any way for a first-year to get involved, even reading papers or cleaning data? I'm happy to start small."*
+> *"Hi Dr. ———, I'm a first-year CS student. I read about your work on ———. Is there any way for a first-year to get involved, even reading papers or cleaning data? I'm happy to start small."*
 
 That's it. That is the whole skill. Send four of them and one will say yes, and the three who don't answer will not remember, think about you, or care.
 

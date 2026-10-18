@@ -35,18 +35,18 @@
 
 ## Act II: The map of CS
 
-Each session here closes with ten minutes of *"now do it with your agent"*, a small hands-on task in that week's subfield. Week 6 is the exception: it's a panel, no laptops. Two to four students also open every session with [*This Week in CS*](reading.md), starting Wed, Sep 23.
+Each session here closes with ten minutes of *"now do it with your agent"*, a small hands-on task in that week's subfield. Weeks 6 and 9 are the exceptions: a panel, and a field trip. Two to four students also open every session with [*This Week in CS*](reading.md), starting Wed, Sep 23.
 
 | Week | Date | Session | Before class | Due & announcements |
 |---|---|---|---|---|
 | 6 | Wed, Sep 30 | 👥 **Thriving in College.** Student panel, no laptops. Your five peer mentors, and you ask the questions | Bring a question. Anonymous is fine | The written version, with deadlines, is **[Opportunities](opportunities.md)**<br>📌 [**Professional Foundations**](professional-foundations.md) **due** · [**CS Engagement**](syllabus.md#cs-engagement-experiences-3-15) **1 of 3 due**<br>[Ship-It](ship-it.md#timeline): pick your project and tell your pod what you chose |
 | 7 | Wed, Oct 7 | **Networks & the Internet.** What happens when you hit Enter on a URL<br>[Slides](week-07-slides.html){ .mat } | | 📌 [**Build Checkpoint 1**](syllabus.md#build-checkpoints-2-10) **due:** your Karel repository, your own world, and `NOTES.md` |
-| 8 | Wed, Oct 14 | 🎤 **Cybersecurity & Digital Risk.** Threat models, and a live phishing teardown of real messages. Industry guest | | |
-| 9 | Wed, Oct 21 | **How Computers Actually Work.** Memory, processes, and the rest of the story behind `command not found` | | 📌 [**Peer Mentor Meeting**](syllabus.md#peer-mentor-meeting-10) **due · [CS Engagement](syllabus.md#cs-engagement-experiences-3-15) 2 of 3 due** |
-| 10 | Wed, Oct 28 | 🎤 **AI, ML & LLMs From the Inside.** What's actually in the tool you've driven for six weeks, and why it hallucinates. Industry guest | | |
-| 11 | Wed, Nov 4 | **Data & Databases.** Tables, queries, scale, and who the data belongs to | | 📌 [**Ship-It**](ship-it.md#timeline)**: last day to propose a project that isn't on the menu**<br>Your mentor checks in with your pod this week: show them your repo, even if it's broken |
-| 12 | Wed, Nov 11 | **Open Source & Your First Pull Request.** You open one in class, against a practice site built for this, and watch it merged and live before you leave | | Your pull request counts as participation<br>📌 [**Build Checkpoint 2**](syllabus.md#build-checkpoints-2-10) **assigned**, due Mon, Nov 23: clone a real open-source project, have your agent explain it, get it running. **If it won't run, document what you tried and that earns full credit** |
-| 13 | Wed, Nov 18 | 🎤 **Faculty Research Lightning Talks.** Five faculty × six minutes each, tightly timed | Bring questions. This is how undergraduate research positions get filled | 📌 [**CS Engagement**](syllabus.md#cs-engagement-experiences-3-15)**: all 3 due**<br>Your mentor checks that your [Ship-It](ship-it.md#timeline) project **runs before break**, even if it's ugly |
+| 8 | Wed, Oct 14 | ❌ **No class: cancelled.** The session would have been **Cybersecurity & Digital Risk**: threat models, a phishing teardown of real messages, and a live attack on a website built to be broken. The slides are yours to read on your own<br>[Slides](week-08-slides.html){ .mat } | | |
+| 9 | Wed, Oct 21 | 🎤 **Field trip: the Neeley School's Tandy Executive Speaker Series.** A fireside chat with Neeley's Dean Craig Crossland and Stephen Gillett, CEO of Verily Health: *Turning Ghost Data into Real-World Business Impact*. **9:00 to 10:00 AM, and not in RJH 333**: where to go is in Slack. We sit together | **Business casual.** Breakfast and networking start at 8:00: optional, and worth it if your morning is free. Got a 10:00 class? Slip out at 9:50, that's fine | Counts as one of your three [CS Engagement](syllabus.md#cs-engagement-experiences-3-15) events: write it up the usual way<br>📌 [**Peer Mentor Meeting**](syllabus.md#peer-mentor-meeting-10) **due · [CS Engagement](syllabus.md#cs-engagement-experiences-3-15) 2 of 3 due** |
+| 10 | Wed, Oct 28 | **How Computers Actually Work.** Memory, processes, and the rest of the story behind `command not found` | | |
+| 11 | Wed, Nov 4 | 🎤 **AI, ML & LLMs From the Inside.** What's actually in the tool you've driven for six weeks, and why it hallucinates. Industry guest | | 📌 [**Ship-It**](ship-it.md#timeline)**: last day to propose a project that isn't on the menu**<br>Your mentor checks in with your pod this week: show them your repo, even if it's broken |
+| 12 | Wed, Nov 11 | **Data & Databases.** Tables, queries, scale, and who the data belongs to | | |
+| 13 | Wed, Nov 18 | **Open Source & Your First Pull Request.** You open one in class, against a practice site built for this, and watch it merged and live before you leave | | Your pull request counts as participation<br>| 📌 [**Build Checkpoint 2**](syllabus.md#build-checkpoints-2-10) **assigned**, due Mon, Nov 30: clone a real open-source project, have your agent explain it, get it running. **If it won't run, document what you tried and that earns full credit**<br>📌 [**CS Engagement**](syllabus.md#cs-engagement-experiences-3-15)**: all 3 due**<br>Your mentor checks that your [Ship-It](ship-it.md#timeline) project **runs before break**, even if it's ugly |
 
 ---
 
@@ -74,7 +74,7 @@ Every assignment name below links to its full spec. Which AI rules apply to each
 | Wed, Oct 21 | [CS Engagement](syllabus.md#cs-engagement-experiences-3-15): 2 of 3 complete | n/a |
 | Wed, Nov 4 | [Ship-It](ship-it.md#timeline): last day to propose a project not on the menu | n/a |
 | Wed, Nov 18 | [CS Engagement](syllabus.md#cs-engagement-experiences-3-15): all 3 complete | 15% |
-| **Mon, Nov 23** | [**Build Checkpoint 2**](syllabus.md#build-checkpoints-2-10): read somebody else's code, run it or log the attempt | 5% |
+| **Mon, Nov 30** | [**Build Checkpoint 2**](syllabus.md#build-checkpoints-2-10): read somebody else's code, run it or log the attempt | 5% |
 | **Sun, Dec 6** | [**Ship-It Project**](ship-it.md): artifact, `README.md`, `AI-NOTES.md` | 20% |
 | Wed, Dec 9 | [Ship-It demo](ship-it.md#what-you-turn-in) (in class) | *(included above)* |
 | **Mon, Dec 14** | [**Four-Year CS Development Plan**](syllabus.md#final-project-four-year-cs-development-plan-15): one to two pages, written | 15% |

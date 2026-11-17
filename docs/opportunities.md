@@ -80,7 +80,7 @@ The [Center for Career & Professional Development](https://careers.tcu.edu) is f
 
 **Where the postings actually show up.** [SimplifyJobs/Summer2027-Internships](https://github.com/SimplifyJobs/Summer2027-Internships) is a public GitHub repo listing tech internships for the summer after this one, kept current by volunteers and sorted by the date each one opened. Summer 2027 is the cycle you are eligible for as a first-year, so this is your list, not a list to admire and come back to in three years. Star it now and check it once a week; new roles appear at the top all fall. Note that a lot of the postings say "junior or senior standing," and applying anyway costs you nothing.
 
-It is also a nice thing to look at before the open-source session: the whole list is maintained by pull requests from strangers, which is the same mechanism you'll use in class that week.
+It is also a nice example of open source: the whole list is maintained by pull requests from strangers.
 
 If the internship you want is unpaid or barely paid, ask the Career Center about the **Intern Scholarship Program**. Money should not be what decides this.
 

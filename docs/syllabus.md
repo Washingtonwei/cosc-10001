@@ -134,7 +134,7 @@ This class meets **once a week**, so missing one session is missing an entire to
 
 **Participation** means engaging with your pod, taking part in the in-class activity, and delivering your *This Week in CS* slot on your assigned date.
 
-One activity is worth naming in advance: **in the open-source session you will open a real pull request against a live public website, in the browser, and watch it get merged and go live.** It's a practice site built for exactly this, so nothing you click can break anything that matters, and the pull request is real either way. It counts here, as participation, not as a separate grade. You'll finish your first semester with a public contribution to open-source software under your own name, which most people manage in their third year, if ever.
+One standing invitation: **the ✏️ pencil at the top of every page on this site opens a real pull request.** Find a typo or a broken link, fix it, and I'll merge it. That's a public contribution to open-source software under your own name, which most people manage in their third year, if ever.
 
 ---
 

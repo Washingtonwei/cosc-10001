@@ -28,7 +28,7 @@ Computing is also not all artificial intelligence, and a reading diet that is al
 
 **One bookmark, not a subscription:** [Julia Evans](https://jvns.ca) and her [Wizard Zines](https://wizardzines.com) explain the command line, git, DNS, and debugging better than anyone. Go there the week you're stuck on git.
 
-**What people are building:** [GitHub Trending](https://github.com/trending) is what's getting starred right now. It's a popularity chart, not a quality ranking, and trending repos make **bad first pull requests**: huge, busy, and maintained by people drowning in notifications. [The ReadME Project](https://github.com/readme) is GitHub's writing about the people behind open source, and direct background for the open-source session.
+**What people are building:** [GitHub Trending](https://github.com/trending) is what's getting starred right now. It's a popularity chart, not a quality ranking, and trending repos make **bad first pull requests**: huge, busy, and maintained by people drowning in notifications. [The ReadME Project](https://github.com/readme) is GitHub's writing about the people behind open source, and good background on open source.
 
 **Medium is a platform, not a source.** Quality runs from excellent engineers writing for free to AI-generated filler. Follow **specific writers**, never Medium itself, and check who wrote something before you trust it.
 
